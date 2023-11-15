@@ -16,7 +16,7 @@ import java.util.Map;
 
 @EnableKafka
 @Configuration
-public class AuditConsumerConfig {
+public class AuctionAuditConsumerConfig {
 
         @Value("${spring.kafka.bootstrap-servers}")
         private String bootstrapServerConfig;
@@ -31,7 +31,6 @@ public class AuditConsumerConfig {
             consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
             consumerConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
             consumerConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServerConfig);
-            consumerConfig.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, RoundRobinAssignor.class.getName());
 
             return new DefaultKafkaConsumerFactory<>(consumerConfig);
         }

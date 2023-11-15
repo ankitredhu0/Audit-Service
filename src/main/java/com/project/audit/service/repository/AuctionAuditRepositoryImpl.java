@@ -13,9 +13,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 @Repository
-public class AuditRepositoryImpl implements AuditRepository {
+public class AuctionAuditRepositoryImpl implements AuctionAuditRepository {
     public static final int MAX_RETRIES = 2;
-    private final Logger logger = LoggerFactory.getLogger(AuditRepositoryImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(AuctionAuditRepositoryImpl.class);
     @PersistenceContext
     private EntityManager entityManager;
 
